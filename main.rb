@@ -10,4 +10,11 @@ module Enumerable
     length.times { |i| yield(self[i], i) }
     self
   end
+
+  def my_all?
+    for i in 0...length
+      return false unless yield self[i]
+    end
+    true
+  end
 end
