@@ -45,4 +45,9 @@ module Enumerable
     length.times { |i| acc[i] = yield self[i] }
     acc
   end
+
+  def my_inject(init_value)
+    length.times { |i| init_value = yield init_value, self[i] }
+    init_value
+  end
 end
