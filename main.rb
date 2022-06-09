@@ -50,4 +50,10 @@ module Enumerable
     length.times { |i| init_value = yield init_value, self[i] }
     init_value
   end
+
+  def my_select
+    acc = []
+    length.times { |i| acc << self[i] if yield self[i] }
+    acc
+  end
 end
