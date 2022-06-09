@@ -17,4 +17,11 @@ module Enumerable
     end
     true
   end
+
+  def my_all?
+    for i in 0...length
+      return true if yield self[i]
+    end
+    false
+  end
 end
