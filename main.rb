@@ -31,4 +31,12 @@ module Enumerable
     end
     true
   end
+
+  def my_count
+    return length unless block_given?
+
+    acc = 0
+    length.times { |i| acc += 1 if yield self[i] }
+    acc
+  end
 end
