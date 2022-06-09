@@ -24,4 +24,11 @@ module Enumerable
     end
     false
   end
+
+  def my_none?
+    for i in 0...length
+      return false if yield self[i]
+    end
+    true
+  end
 end
