@@ -39,4 +39,10 @@ module Enumerable
     length.times { |i| acc += 1 if yield self[i] }
     acc
   end
+
+  def my_map
+    acc = []
+    length.times { |i| acc[i] = yield self[i] }
+    acc
+  end
 end
